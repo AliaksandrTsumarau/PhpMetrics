@@ -5,7 +5,7 @@
 <div id="sidebar">
     <div class="content">
         <div class="logo">
-            <a href="http://www.phpmetrics.org"><img src="images/phpmetrics-maintenability.png"
+            <a href="http://www.phpmetrics.org"><img src="<?php echo $this->assetPath;?>images/phpmetrics-maintenability.png"
                                                  alt="Logo PhpMetrics"/></a>
             <h1>PhpMetrics</h1>
         </div>
@@ -176,19 +176,19 @@
 <?php } ?>
 </div>
 
-<script type="text/javascript" src="js/functions.js"></script>
-<script type="text/javascript" src="js/d3.v3.js"></script>
-<script type="text/javascript" src="js/d3.hexbin.v0.js"></script>
-<script type="text/javascript" src="js/sort-table.min.js"></script>
-<script type="text/javascript" src="js/graph-maintainability.js"></script>
-<script type="text/javascript" src="js/graph-carousel.js"></script>
-<script type="text/javascript" src="js/graph-licenses.js"></script>
-<script type="text/javascript" src="js/FileSaver.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->assetPath; ?>js/functions.js"></script>
+<script type="text/javascript" src="<?php echo $this->assetPath; ?>js/d3.v3.js"></script>
+<script type="text/javascript" src="<?php echo $this->assetPath; ?>js/d3.hexbin.v0.js"></script>
+<script type="text/javascript" src="<?php echo $this->assetPath; ?>js/sort-table.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->assetPath; ?>js/graph-maintainability.js"></script>
+<script type="text/javascript" src="<?php echo $this->assetPath; ?>js/graph-carousel.js"></script>
+<script type="text/javascript" src="<?php echo $this->assetPath; ?>js/graph-licenses.js"></script>
+<script type="text/javascript" src="<?php echo $this->assetPath; ?>js/FileSaver.min.js"></script>
 
-<script src="js/clusterize.min.js"></script>
-<link rel="stylesheet" href="css/clusterize.css">
+<script src="<?php echo $this->assetPath; ?>js/clusterize.min.js"></script>
+<link rel="stylesheet" href="<?php echo $this->assetPath; ?>css/clusterize.css">
 
-<script type="text/javascript" src="js/classes.js"></script>
+<script type="text/javascript" src="classes.js"></script>
 
 <script type="text/javascript">
     var accessibilityEnabled = false;

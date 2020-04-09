@@ -40,6 +40,30 @@ class ConfigFileReaderJson implements ConfigFileReaderInterface
             throw new \InvalidArgumentException("Bad json file '{$this->filename}'");
         }
 
+        if (isset($jsonData['includes'])) {
+            $includes = $jsonData['includes'];
+            $files = [];
+            // with config file, includes are relative to config file
+            foreach ($includes as $include) {
+                $files[] = dirname($this->filename) . DIRECTORY_SEPARATOR . $include;
+            }
+            $config->set('files', $files);
+            unset($jsonData['includes']);
+        }
+
+        if (isset($jsonData['groups'])) {
+            $config->set('groups', $jsonData['groups']);
+            unset($jsonData['groups']);
+        }
+
+        if (isset($jsonData['excludes'])) {
+            // retro-compatibility
+            // "exclude" is a string
+            // excludes is an array
+            $config->set('exclude', $jsonData['excludes']);
+            unset($jsonData['excludes']);
+        }
+
         $jsonDataImploded = $this->collapseArray($jsonData);
 
         foreach ($jsonDataImploded as $key => $value) {
